@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicycle Hub | Discover, Rent & Ride</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-bicycle me-2 fs-3"></i> Bicycle Hub
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center" id="nav-links">
+                    <li class="nav-item"><a class="nav-link fw-semibold px-3" href="bicycles.html">Browse Bikes</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section mt-5 mt-lg-0">
+        <div class="container hero-content text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-lg-7 pt-5 pt-md-0">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 fw-normal text-uppercase ls-wider">Premium Rentals</span>
+                    <h1 class="display-3 fw-bold">Unlock Your Next Great Adventure.</h1>
+                    <p class="lead">Elevate your journey with our top-tier selection of mountain, city, and racing bicycles. Rent flexibly, ride brilliantly.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-md-start">
+                        <a href="bicycles.html" class="btn btn-primary btn-lg">Explore Collection <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="#how-it-works" class="btn btn-outline-light border-2 btn-lg">How It Works</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-white py-4 border-bottom shadow-sm">
+        <div class="container text-center">
+            <p class="text-muted fw-bold mb-3 text-uppercase" style="letter-spacing: 2px; font-size: 0.8rem;">Trusted by riders everywhere</p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap opacity-50">
+                <h4 class="mb-0 fw-bold"><i class="bi bi-shield-check me-1"></i> RiderPro</h4>
+                <h4 class="mb-0 fw-bold"><i class="bi bi-building me-1"></i> CityCruise</h4>
+                <h4 class="mb-0 fw-bold"><i class="bi bi-tree me-1"></i> TrailMaster</h4>
+                <h4 class="mb-0 fw-bold"><i class="bi bi-wind me-1"></i> AeroVelo</h4>
+            </div>
+        </div>
+    </div>
+
+    <section id="how-it-works" class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold fs-1 mb-3">How It Works</h2>
+                <p class="text-muted lead">Three simple steps to get you on the road instantly.</p>
+            </div>
+            <div class="row g-4 position-relative">
+                <div class="col-md-4">
+                    <div class="how-it-works-step bg-white rounded-4 shadow-sm h-100 border">
+                        <div class="step-number">01</div>
+                        <div class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4 class="fw-bold">Find Your Ride</h4>
+                        <p class="text-muted">Browse our extensive catalog of beautifully maintained premium bicycles suited for any terrain.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="how-it-works-step bg-white rounded-4 shadow-sm h-100 border">
+                        <div class="step-number">02</div>
+                        <div class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h4 class="fw-bold">Book Instantly</h4>
+                        <p class="text-muted">Select your dates, confirm your booking with a single click, and securely manage your reservation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="how-it-works-step bg-white rounded-4 shadow-sm h-100 border">
+                        <div class="step-number">03</div>
+                        <div class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h4 class="fw-bold">Pick Up & Go</h4>
+                        <p class="text-muted">Retrieve your bicycle from our hub and enjoy the seamless, exhilarating riding experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white position-relative border-top border-bottom">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="http://localhost:5001/uploads/city_bike.png" onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&q=80'" alt="City Bike" class="img-fluid rounded-4 shadow-lg" style="transform: rotate(-2deg); border: 8px solid #fff;">
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <h2 class="fw-bold fs-1 mb-4">Crafted for Excellence</h2>
+                    <p class="text-muted lead mb-5">We go above and beyond to guarantee your safety, comfort, and satisfaction on every single journey.</p>
+                    
+                    <div class="d-flex mb-4 align-items-start">
+                        <div class="flex-shrink-0 text-primary fs-2 me-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Impeccable Maintenance</h5>
+                            <p class="text-muted mb-0">Every bike is thoroughly serviced and inspected after every single rental.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4 align-items-start">
+                        <div class="flex-shrink-0 text-primary fs-2 me-3">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Lightweight & Fast</h5>
+                            <p class="text-muted mb-0">Carbon fiber frames and advanced gear systems for effortless momentum.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0 text-primary fs-2 me-3">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">24/7 Support</h5>
+                            <p class="text-muted mb-0">Experiencing a flat tire? Our dedicated support team is just a call away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 my-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5 fs-1">Loved by Cyclists</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border border-light shadow-sm p-4 rounded-4 h-100 bg-white">
+                        <div class="text-warning mb-3 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic mb-4 text-muted">"The mountain bike I rented was in absolute pristine condition. Handled the rocky trails perfectly. Highly recommend!"</p>
+                        <div class="mt-auto d-flex align-items-center justify-content-center">
+                            <h6 class="fw-bold mb-0 text-dark">- Sarah Jenkins</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg p-4 rounded-4 h-100 text-white" style="background-color: var(--primary-color); transform: scale(1.05); z-index: 2;">
+                        <div class="text-warning mb-3 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic mb-4">"Bicycle Hub made my city commute a breeze. The UI is gorgeous, booking took 10 seconds, and the bike was sleek."</p>
+                        <div class="mt-auto d-flex align-items-center justify-content-center">
+                            <h6 class="fw-bold mb-0">- David Chen</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border border-light shadow-sm p-4 rounded-4 h-100 bg-white">
+                        <div class="text-warning mb-3 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="fst-italic mb-4 text-muted">"Excellent selection of racing bikes. Prices are very reasonable given the top-tier quality of the equipment."</p>
+                        <div class="mt-auto d-flex align-items-center justify-content-center">
+                            <h6 class="fw-bold mb-0 text-dark">- Mark T.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-white text-center position-relative overflow-hidden" style="background-color: var(--secondary-color);">
+        <div class="container py-5 position-relative" style="z-index: 1;">
+            <h2 class="display-5 fw-bold mb-3">Ready to Hit the Road?</h2>
+            <p class="lead mb-4 text-white-50">Join hundreds of happy riders and book your perfect bicycle today.</p>
+            <a href="bicycles.html" class="btn btn-primary btn-lg px-5 shadow-lg">Get Started <i class="bi bi-arrow-right"></i></a>
+        </div>
+        
+        <div class="position-absolute bg-primary rounded-circle" style="width: 400px; height: 400px; opacity: 0.15; top: -100px; right: -100px; filter: blur(50px);"></div>
+        <div class="position-absolute bg-white rounded-circle" style="width: 300px; height: 300px; opacity: 0.05; bottom: -50px; left: -100px; filter: blur(50px);"></div>
+    </section>
+
+    <footer class="pt-5 pb-3 bg-dark">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-bicycle me-2"></i>Bicycle Hub</h5>
+                    <p class="text-white-50">Your premier destination for high-quality, reliable, and premium bicycle rentals.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="bicycles.html" class="text-white-50 text-decoration-none">Bicycles</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-white-50 text-decoration-none">Login / Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3 text-white">Contact Details</h5>
+                    <p class="text-white-50 mb-1"><i class="bi bi-geo-alt me-2"></i> 123 Cycling Way, Ride City</p>
+                    <p class="text-white-50 mb-1"><i class="bi bi-envelope me-2"></i> support@bicyclehub.com</p>
+                    <p class="text-white-50"><i class="bi bi-telephone me-2"></i> +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-3 text-center">
+                <p class="mb-0 text-white-50 small">&copy; 2024 Bicycle Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
