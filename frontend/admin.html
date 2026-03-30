@@ -73,6 +73,8 @@
                                 <th class="py-3">User</th>
                                 <th class="py-3">Bicycle</th>
                                 <th class="py-3">Date</th>
+                                <th class="py-3">Days</th>
+                                <th class="py-3">Total Price</th>
                                 <th class="py-3">Status</th>
                                 <th class="py-3 text-center">Actions</th>
                             </tr>
@@ -113,8 +115,8 @@
                             <input type="number" class="form-control" id="add-price" step="0.01" required>
                         </div>
                         <div class="mb-4">
-                            <label class="form-label text-muted small fw-bold">Image URL</label>
-                            <input type="text" class="form-control" id="add-image" required placeholder="https:// images...">
+                            <label class="form-label text-muted small fw-bold">Image File</label>
+                            <input type="file" class="form-control" id="add-image" accept="image/*" required>
                         </div>
                         <div id="add-error" class="alert alert-danger d-none py-2 text-center" role="alert"></div>
                         <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Save Bicycle</button>

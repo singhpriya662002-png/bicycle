@@ -2,16 +2,24 @@ const pool = require('../config/db');
 
 const createBooking = async (req, res) => {
     try {
-        const { bicycle_id, date } = req.body;
+        const { bicycle_id, date, duration } = req.body;
         const user_id = req.user.id;
+        const rent_duration = duration ? parseInt(duration) : 1;
 
         if (!bicycle_id || !date) {
             return res.status(400).json({ message: 'Please provide bicycle and date' });
         }
 
+        // Fetch bicycle price
+        const [bicycles] = await pool.query('SELECT price FROM bicycles WHERE id = ?', [bicycle_id]);
+        if (bicycles.length === 0) return res.status(404).json({ message: 'Bicycle not found' });
+        const bicycle = bicycles[0];
+        
+        const total_price = bicycle.price * rent_duration;
+
         const [result] = await pool.query(
-            'INSERT INTO bookings (user_id, bicycle_id, date, status) VALUES (?, ?, ?, ?)',
-            [user_id, bicycle_id, date, 'pending']
+            'INSERT INTO bookings (user_id, bicycle_id, date, duration, total_price, status) VALUES (?, ?, ?, ?, ?, ?)',
+            [user_id, bicycle_id, date, rent_duration, total_price, 'pending']
         );
 
         res.status(201).json({ message: 'Booking requested successfully', id: result.insertId });

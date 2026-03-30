@@ -182,8 +182,15 @@ async function fetchBicycleDetails() {
                     <h5 class="fw-bold mb-3">Rent this Bicycle</h5>
                     <form id="rent-form">
                         <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold">Select Date</label>
+                            <label class="form-label text-muted small fw-bold">Select Start Date</label>
                             <input type="date" class="form-control form-control-lg" id="rent-date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Duration (Days)</label>
+                            <input type="number" class="form-control form-control-lg" id="rent-duration" min="1" value="1" required>
+                        </div>
+                        <div class="mb-3 text-end h5 fw-bold text-primary">
+                            Total: $<span id="calculated-total">${bike.price}</span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold py-2">Book Now</button>
                     </form>
@@ -193,9 +200,15 @@ async function fetchBicycleDetails() {
         `;
         container.classList.remove('d-none');
 
+        document.getElementById('rent-duration').addEventListener('input', (e) => {
+            const days = parseInt(e.target.value) || 1;
+            document.getElementById('calculated-total').textContent = (bike.price * days).toFixed(2);
+        });
+
         document.getElementById('rent-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const date = document.getElementById('rent-date').value;
+            const duration = document.getElementById('rent-duration').value;
             const user = getUser();
             const msgDiv = document.getElementById('rent-msg');
 
@@ -211,7 +224,7 @@ async function fetchBicycleDetails() {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${user.token}`
                     },
-                    body: JSON.stringify({ bicycle_id: id, date })
+                    body: JSON.stringify({ bicycle_id: id, date, duration })
                 });
 
                 const rentData = await rentRes.json();
@@ -276,7 +289,8 @@ async function fetchMyBookings() {
                     <td><img src="${imgSrc}" alt="Bike" style="width: 80px; height: 50px; object-fit: cover; border-radius: 5px;" class="shadow-sm"></td>
                     <td class="fw-bold">${b.bicycle_name}</td>
                     <td>${formattedDate}</td>
-                    <td class="text-primary fw-bold">$${b.price}</td>
+                    <td class="text-center">${b.duration}</td>
+                    <td class="text-primary fw-bold">$${b.total_price}</td>
                     <td><span class="badge ${statusBadge}">${b.status.toUpperCase()}</span></td>
                     <td class="text-center">
                         ${b.status === 'pending' ? `<button class= onclick=>Cancel</button>` : `<span class=>-</span>`}
@@ -340,6 +354,8 @@ async function adminFetchBookings() {
                     <td><span class="fw-bold">${b.user_name}</span> <br><small class="text-muted">${b.user_email}</small></td>
                     <td class="fw-bold text-primary">${b.bicycle_name}</td>
                     <td>${formattedDate}</td>
+                    <td class="text-center">${b.duration}</td>
+                    <td class="text-primary fw-bold">$${b.total_price}</td>
                     <td>
                         <select class="form-select form-select-sm status-select shadow-sm" data-id="${b.id}">
                             <option value="pending" ${b.status==='pending'?'selected':''}>Pending</option>
@@ -416,17 +432,22 @@ if (addBicycleForm) {
         const name = document.getElementById('add-name').value;
         const type = document.getElementById('add-type').value;
         const price = document.getElementById('add-price').value;
-        const image = document.getElementById('add-image').value;
+        const imageFile = document.getElementById('add-image').files[0];
         const errorDiv = document.getElementById('add-error');
 
         try {
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('type', type);
+            formData.append('price', price);
+            if (imageFile) formData.append('image', imageFile);
+
             const res = await fetch(`${API_URL}/bicycles`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${getToken()}`
                 },
-                body: JSON.stringify({ name, type, price, image })
+                body: formData
             });
 
             if (res.ok) {

@@ -28,6 +28,8 @@ CREATE TABLE bookings (
     user_id INT NOT NULL,
     bicycle_id INT NOT NULL,
     date DATE NOT NULL,
+    duration INT NOT NULL DEFAULT 1,
+    total_price DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
     status ENUM('pending', 'approved', 'rejected', 'completed') DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
